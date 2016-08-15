@@ -205,11 +205,25 @@
     <Compile Include="Migrations\201608152015236_InitialModel.Designer.cs">
       <DependentUpon>201608152015236_InitialModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201608152037001_AddProspectClass.cs" />
+    <Compile Include="Migrations\201608152037001_AddProspectClass.Designer.cs">
+      <DependentUpon>201608152037001_AddProspectClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201608152040413_AddProspectClassTable.cs" />
+    <Compile Include="Migrations\201608152040413_AddProspectClassTable.Designer.cs">
+      <DependentUpon>201608152040413_AddProspectClassTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201608152048529_AddUserClassTable.cs" />
+    <Compile Include="Migrations\201608152048529_AddUserClassTable.Designer.cs">
+      <DependentUpon>201608152048529_AddUserClassTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Prospect.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -288,6 +302,15 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201608152015236_InitialModel.resx">
       <DependentUpon>201608152015236_InitialModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608152037001_AddProspectClass.resx">
+      <DependentUpon>201608152037001_AddProspectClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608152040413_AddProspectClassTable.resx">
+      <DependentUpon>201608152040413_AddProspectClassTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608152048529_AddUserClassTable.resx">
+      <DependentUpon>201608152048529_AddUserClassTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
