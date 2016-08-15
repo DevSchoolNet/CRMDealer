@@ -23,6 +23,9 @@ namespace CRMCarDealer.Models
         public DbSet<Contact> Contact { get; set; }
         public DbSet<Prospect> Prospect { get; set; }
         public DbSet<User> User { get; set; }
+        public DbSet<Salesman> Salesman { get; set; }
+        public DbSet<Customer> Customer { get; set; }
+        public DbSet<Reminder> Reminder { get; set; }
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
