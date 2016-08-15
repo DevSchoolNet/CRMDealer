@@ -8,6 +8,16 @@ namespace CRMCarDealer.Migrations
         public override void Up()
         {
             CreateTable(
+                "dbo.Contacts",
+                c => new
+                    {
+                        Id = c.Byte(nullable: false),
+                        Mail = c.String(),
+                        Telephone = c.String(),
+                    })
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
                 "dbo.AspNetRoles",
                 c => new
                     {
@@ -94,6 +104,7 @@ namespace CRMCarDealer.Migrations
             DropTable("dbo.AspNetUsers");
             DropTable("dbo.AspNetUserRoles");
             DropTable("dbo.AspNetRoles");
+            DropTable("dbo.Contacts");
         }
     }
 }
