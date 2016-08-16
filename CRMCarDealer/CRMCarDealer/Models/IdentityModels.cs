@@ -20,12 +20,22 @@ namespace CRMCarDealer.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+       
         public DbSet<Contact> Contact { get; set; }
         public DbSet<Prospect> Prospect { get; set; }
         public DbSet<User> User { get; set; }
         public DbSet<Salesman> Salesman { get; set; }
         public DbSet<Customer> Customer { get; set; }
         public DbSet<Reminder> Reminder { get; set; }
+        public DbSet<Product> Product { get; set; }
+        public DbSet<ProductDetails> ProductDetails { get; set; }
+        public DbSet<TestCar> TestCar { get; set; }
+        public DbSet<DriveTest> DriveTest { get; set; }
+        public DbSet<SpecialOffer> SpecialOffer { get; set; }
+        public DbSet<Order> Order { get; set; }
+
+        public DbSet<OrderDetails> OrderDetails { get; set; }
+        public DbSet<Invoice> Invoice { get; set; }
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {

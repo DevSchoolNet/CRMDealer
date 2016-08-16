@@ -225,15 +225,47 @@
     <Compile Include="Migrations\201608152111173_AddCustomerReminderClassTables.Designer.cs">
       <DependentUpon>201608152111173_AddCustomerReminderClassTables.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201608160829489_AddProductClassTable.cs" />
+    <Compile Include="Migrations\201608160829489_AddProductClassTable.Designer.cs">
+      <DependentUpon>201608160829489_AddProductClassTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201608160835361_AddProductDetailsClassTable.cs" />
+    <Compile Include="Migrations\201608160835361_AddProductDetailsClassTable.Designer.cs">
+      <DependentUpon>201608160835361_AddProductDetailsClassTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201608160839268_AddTestCarClassTable.cs" />
+    <Compile Include="Migrations\201608160839268_AddTestCarClassTable.Designer.cs">
+      <DependentUpon>201608160839268_AddTestCarClassTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201608160842347_AddDriveTestClassTable.cs" />
+    <Compile Include="Migrations\201608160842347_AddDriveTestClassTable.Designer.cs">
+      <DependentUpon>201608160842347_AddDriveTestClassTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201608160849187_AddSpecialOfferOrderOrderDetailsClassTables.cs" />
+    <Compile Include="Migrations\201608160849187_AddSpecialOfferOrderOrderDetailsClassTables.Designer.cs">
+      <DependentUpon>201608160849187_AddSpecialOfferOrderOrderDetailsClassTables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201608160852161_AddInvoiceClassTable.cs" />
+    <Compile Include="Migrations\201608160852161_AddInvoiceClassTable.Designer.cs">
+      <DependentUpon>201608160852161_AddInvoiceClassTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\DriveTest.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Invoice.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\OrderDetails.cs" />
+    <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\ProductDetails.cs" />
     <Compile Include="Models\Prospect.cs" />
     <Compile Include="Models\Reminder.cs" />
     <Compile Include="Models\Salesman.cs" />
+    <Compile Include="Models\SpecialOffer.cs" />
+    <Compile Include="Models\TestCar.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -328,6 +360,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201608152111173_AddCustomerReminderClassTables.resx">
       <DependentUpon>201608152111173_AddCustomerReminderClassTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608160829489_AddProductClassTable.resx">
+      <DependentUpon>201608160829489_AddProductClassTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608160835361_AddProductDetailsClassTable.resx">
+      <DependentUpon>201608160835361_AddProductDetailsClassTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608160839268_AddTestCarClassTable.resx">
+      <DependentUpon>201608160839268_AddTestCarClassTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608160842347_AddDriveTestClassTable.resx">
+      <DependentUpon>201608160842347_AddDriveTestClassTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608160849187_AddSpecialOfferOrderOrderDetailsClassTables.resx">
+      <DependentUpon>201608160849187_AddSpecialOfferOrderOrderDetailsClassTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608160852161_AddInvoiceClassTable.resx">
+      <DependentUpon>201608160852161_AddInvoiceClassTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
