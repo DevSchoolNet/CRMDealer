@@ -251,22 +251,10 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\Contact.cs" />
-    <Compile Include="Models\Customer.cs" />
-    <Compile Include="Models\DriveTest.cs" />
+    <Compile Include="Models\AddProductModel.cs" />
+    <Compile Include="Models\AddProspectModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\Invoice.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\Order.cs" />
-    <Compile Include="Models\OrderDetails.cs" />
-    <Compile Include="Models\Product.cs" />
-    <Compile Include="Models\ProductDetails.cs" />
-    <Compile Include="Models\Prospect.cs" />
-    <Compile Include="Models\Reminder.cs" />
-    <Compile Include="Models\Salesman.cs" />
-    <Compile Include="Models\SpecialOffer.cs" />
-    <Compile Include="Models\TestCar.cs" />
-    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -330,6 +318,8 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Home\AddProduct.cshtml" />
+    <Content Include="Views\Home\AddProspect.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -379,6 +369,16 @@
     <EmbeddedResource Include="Migrations\201608160852161_AddInvoiceClassTable.resx">
       <DependentUpon>201608160852161_AddInvoiceClassTable.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessServices\BusinessServices.csproj">
+      <Project>{c2c2c6b4-9a04-45cd-a828-f7515b7c9b5d}</Project>
+      <Name>BusinessServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CRMModels\CRMModels.csproj">
+      <Project>{f260f1f4-1ed6-47d8-a674-495f24790cad}</Project>
+      <Name>CRMModels</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

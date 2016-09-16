@@ -5,14 +5,14 @@ namespace CRMCarDealer.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<CRMCarDealer.Models.ApplicationDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<CRMModels.ApplicationDbContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(CRMCarDealer.Models.ApplicationDbContext context)
+        protected override void Seed(CRMModels.ApplicationDbContext context)
         {
             //  This method will be called after migrating to the latest version.
 

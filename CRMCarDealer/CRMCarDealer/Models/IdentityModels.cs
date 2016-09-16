@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 
-namespace CRMCarDealer.Models
+namespace CRMModels
 {
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit http://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser
@@ -28,13 +28,13 @@ namespace CRMCarDealer.Models
         public DbSet<Customer> Customer { get; set; }
         public DbSet<Reminder> Reminder { get; set; }
         public DbSet<Product> Product { get; set; }
-        public DbSet<ProductDetails> ProductDetails { get; set; }
+        public DbSet<ProductDetail> ProductDetails { get; set; }
         public DbSet<TestCar> TestCar { get; set; }
         public DbSet<DriveTest> DriveTest { get; set; }
         public DbSet<SpecialOffer> SpecialOffer { get; set; }
         public DbSet<Order> Order { get; set; }
 
-        public DbSet<OrderDetails> OrderDetails { get; set; }
+        public DbSet<OrderDetail> OrderDetails { get; set; }
         public DbSet<Invoice> Invoice { get; set; }
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)

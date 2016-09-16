@@ -1,4 +1,7 @@
-﻿using System;
+﻿using BusinessServices;
+using CRMCarDealer.Models;
+using CRMModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +11,8 @@ namespace CRMCarDealer.Controllers
 {
     public class HomeController : Controller
     {
+        CRMContext Context;
+
         public ActionResult Index()
         {
             return View();
@@ -26,5 +31,38 @@ namespace CRMCarDealer.Controllers
 
             return View();
         }
+
+        //De aici incepe smekeria
+
+
+        //<AddProduct>
+        public ActionResult AddProduct()
+        {
+        return View();
+        }
+
+        [HttpPost]
+        public ActionResult AddProduct(AddProductModel productModel)
+        {
+            ProductService.AddProduct(productModel.Name, productModel.Model, productModel.EngineCapacity, productModel.Price, productModel.ChasisSeries);
+            return RedirectToAction("Index");
+        }
+        //</AddProdcut
+
+
+        //<AddProspect>
+        public ActionResult AddProspect()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult AddProspect(AddProspectModel prospectModel)
+        {
+            ProspectService.AddProspect(prospectModel.Name, prospectModel.Details, prospectModel.Email, prospectModel.Telephone);
+            return View();
+        }
+       
+        //</AddProspect
     }
 }
