@@ -11,7 +11,11 @@ namespace CRMCarDealer.Models
         public string Model { get; set; }
         public decimal EngineCapacity { get; set; }
         public decimal Price { get; set; }
-        
+
+        //<Petru>
+        public bool IsForSale { get; set; }
+        //</Petru>
+
         public string ChasisSeries { get; set; }
     }
 }

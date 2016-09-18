@@ -35,7 +35,7 @@ namespace CRMCarDealer.Controllers
         //De aici incepe smekeria
 
 
-        //<AddProduct>
+        #region AddProduct
         public ActionResult AddProduct()
         {
         return View();
@@ -44,13 +44,13 @@ namespace CRMCarDealer.Controllers
         [HttpPost]
         public ActionResult AddProduct(AddProductModel productModel)
         {
-            ProductService.AddProduct(productModel.Name, productModel.Model, productModel.EngineCapacity, productModel.Price, productModel.ChasisSeries);
+            ProductService.AddProduct(productModel.Name, productModel.Model, productModel.EngineCapacity, productModel.Price, productModel.ChasisSeries, productModel.IsForSale);
             return RedirectToAction("Index");
         }
-        //</AddProdcut
+        #endregion
 
 
-        //<AddProspect>
+        #region AddProspect
         public ActionResult AddProspect()
         {
             return View();
@@ -62,7 +62,10 @@ namespace CRMCarDealer.Controllers
             ProspectService.AddProspect(prospectModel.Name, prospectModel.Details, prospectModel.Email, prospectModel.Telephone);
             return View();
         }
-       
-        //</AddProspect
+
+        #endregion
+
+
+
     }
 }

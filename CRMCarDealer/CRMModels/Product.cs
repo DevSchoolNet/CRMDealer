@@ -26,5 +26,28 @@ namespace CRMModels
 
         //Navigation Properties
         public virtual ICollection<ProductDetail> ProductsDetails { get; set; }
+
+
+        //Class methods
+        public override bool Equals(object obj)
+        {
+            Product p = (Product)obj;
+
+            try
+            {
+                if (Name.Equals(p.Name) && Model.Equals(p.Model) && (EngineCapacity == p.EngineCapacity))
+                {
+                    return true;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+
+
+            return false;
+        }
+
     }
 }
