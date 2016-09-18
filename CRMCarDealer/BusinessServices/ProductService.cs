@@ -42,7 +42,7 @@ namespace BusinessServices
             {
                 obj.QuantityForTest += 1;
                 pd = new ProductDetail() { ChasisSeries = _chasisSeries, IsForSale = false };
-                pd.TestCar = new TestCar();
+                pd.TestCar = new TestCar() { ProductDetailId = pd.ProductDetailId };
             }
 
             //Add ProductDetails object to obj 

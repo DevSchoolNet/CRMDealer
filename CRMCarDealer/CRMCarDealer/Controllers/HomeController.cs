@@ -60,7 +60,7 @@ namespace CRMCarDealer.Controllers
         public ActionResult AddProspect(AddProspectModel prospectModel)
         {
             ProspectService.AddProspect(prospectModel.Name, prospectModel.Details, prospectModel.Email, prospectModel.Telephone);
-            return View();
+            return RedirectToAction("Index");
         }
 
         #endregion

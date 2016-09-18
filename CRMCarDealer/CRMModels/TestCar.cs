@@ -9,13 +9,12 @@ namespace CRMModels
 {
     public class TestCar
     {
+        //Constructors
+
         [Key]
         public int TestCarId { get; set; }
 
-
         public Nullable<int> ProductDetailId { get; set; }
-
-
 
         //Navigation Properties
         [ForeignKey("ProductDetailId")]
@@ -23,8 +22,6 @@ namespace CRMModels
 
         [InverseProperty("TestCar")]
         public virtual ICollection<ProductDetail> ProductDetails { get; set; }
-
-        //Navigation Properties
         
     }
 }
