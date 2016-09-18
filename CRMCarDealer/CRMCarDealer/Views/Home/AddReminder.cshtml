@@ -1,0 +1,41 @@
+﻿
+@model CRMCarDealer.Models.AddReminderModel
+@{
+    ViewBag.Title = "AddReminder";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>AddReminder</h2>
+
+@using (Html.BeginForm("AddReminder", "Home"))
+{  <div class="form-group">
+        @Html.LabelFor(m => m.Text, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextAreaFor(m => m.Text, new { @class = "form-control" })
+        </div>
+    </div>
+<div class="form-group">
+    @Html.LabelFor(m => m.SalesmanName, new { @class = "col-md-2 control-label" })
+    <div class="col-md-10">
+        @Html.TextAreaFor(m => m.SalesmanName, new { @class = "form-control" })
+    </div>
+</div>
+<div class="form-group">
+    @Html.LabelFor(m => m.SalesmanSurname, new { @class = "col-md-2 control-label" })
+    <div class="col-md-10">
+        @Html.TextAreaFor(m => m.SalesmanSurname, new { @class = "form-control" })
+    </div>
+</div>
+<div class="form-group">
+    @Html.LabelFor(m => m.CustomerId, new { @class = "col-md-2 control-label" })
+    <div class="col-md-10">
+        @Html.TextAreaFor(m => m.CustomerId, new { @class = "form-control" })
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="col-md-offset-2 col-md-10">
+        <input type="submit" value="Submit" class="btn btn-default" />
+    </div>
+</div>
+}

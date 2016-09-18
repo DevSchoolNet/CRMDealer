@@ -65,7 +65,20 @@ namespace CRMCarDealer.Controllers
 
         #endregion
 
+        #region
+        public ActionResult AddReminder()
+        {
+            return View();
+        }
 
+        [HttpPost]
+        public ActionResult AddReminder(AddReminderModel reminderModel)
+        {
+            ReminderService.AddReminder(reminderModel.Text, reminderModel.SalesmanName, reminderModel.SalesmanSurname, reminderModel.CustomerId);
+            return RedirectToAction("Index");
+        }
+
+        #endregion
 
     }
 }

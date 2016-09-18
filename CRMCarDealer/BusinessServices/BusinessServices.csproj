@@ -52,6 +52,7 @@
     <Compile Include="ProductService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProspectService.cs" />
+    <Compile Include="ReminderService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CRMModels\CRMModels.csproj">
