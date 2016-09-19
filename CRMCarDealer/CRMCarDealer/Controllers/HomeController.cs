@@ -11,7 +11,11 @@ namespace CRMCarDealer.Controllers
 {
     public class HomeController : Controller
     {
+        //DAO Object
         CRMContext Context;
+
+        //log4net
+        private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
         public ActionResult Index()
         {
@@ -45,6 +49,7 @@ namespace CRMCarDealer.Controllers
         public ActionResult AddProduct(AddProductModel productModel)
         {
             ProductService.AddProduct(productModel.Name, productModel.Model, productModel.EngineCapacity, productModel.Price, productModel.ChasisSeries, productModel.IsForSale);
+            log.Info("AddProduct finished execution");
             return RedirectToAction("Index");
         }
         #endregion
@@ -60,12 +65,14 @@ namespace CRMCarDealer.Controllers
         public ActionResult AddProspect(AddProspectModel prospectModel)
         {
             ProspectService.AddProspect(prospectModel.Name, prospectModel.Details, prospectModel.Email, prospectModel.Telephone);
+            log.Info("AddProspect finished execution");
             return RedirectToAction("Index");
         }
 
         #endregion
 
-        #region
+
+        #region AddReminder
         public ActionResult AddReminder()
         {
             return View();
@@ -75,9 +82,10 @@ namespace CRMCarDealer.Controllers
         public ActionResult AddReminder(AddReminderModel reminderModel)
         {
             ReminderService.AddReminder(reminderModel.Text, reminderModel.SalesmanName, reminderModel.SalesmanSurname, reminderModel.CustomerId);
+            log.Info("AddReminder finished execution");
+
             return RedirectToAction("Index");
         }
-
         #endregion
 
     }
