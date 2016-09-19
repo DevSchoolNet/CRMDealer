@@ -1,0 +1,38 @@
+﻿@model IEnumerable<CRMModels.DriveTest>
+
+@{
+    ViewBag.Title = "Index";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Drive Test</h2>
+@if (!Model.Any())
+{
+    <p>No drive tests in the list</p>
+}
+else
+{
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Drive Test Details</th>
+                <th>Date time</th>
+                <th>Prospect</th>
+                <th>Salesman</th>
+                <th>Test Car</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var c in Model)
+            {
+                <tr>
+                    <td>@c.Details</td>
+                    <td>@c.DateTime</td>
+                    <td>@c.Prospect.Name</td>
+                    <td>@c.Salesman.Name</td>
+                    <td>@c.TestCar.TestCarId</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
