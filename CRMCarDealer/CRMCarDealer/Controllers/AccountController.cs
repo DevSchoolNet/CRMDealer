@@ -23,7 +23,7 @@ namespace CRMCarDealer.Controllers
         {
         }
 
-        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
+        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
         {
             UserManager = userManager;
             SignInManager = signInManager;
@@ -35,9 +35,9 @@ namespace CRMCarDealer.Controllers
             {
                 return _signInManager ?? HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
             }
-            private set 
-            { 
-                _signInManager = value; 
+            private set
+            {
+                _signInManager = value;
             }
         }
 
@@ -80,7 +80,26 @@ namespace CRMCarDealer.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
-                    return RedirectToLocal(returnUrl);
+                    var user = await UserManager.FindAsync(model.Email, model.Password);
+                    var roles = await UserManager.GetRolesAsync(user.Id);
+
+                    if (roles.Contains("admin"))
+                    {
+                        return RedirectToAction("Index", "Admin");
+                    }
+                    else if (roles.Contains("salesman"))
+                    {
+                        return RedirectToAction("Index", "Salesman");
+                    }
+                    else if (roles.Contains("customer"))
+                    {
+                        return RedirectToAction("Index", "Customer");
+                    }
+                    else
+                    {
+                        return RedirectToLocal(returnUrl);
+                    }
+
                 case SignInStatus.LockedOut:
                     return View("Lockout");
                 case SignInStatus.RequiresVerification:
@@ -121,10 +140,11 @@ namespace CRMCarDealer.Controllers
             // If a user enters incorrect codes for a specified amount of time then the user account 
             // will be locked out for a specified amount of time. 
             // You can configure the account lockout settings in IdentityConfig
-            var result = await SignInManager.TwoFactorSignInAsync(model.Provider, model.Code, isPersistent:  model.RememberMe, rememberBrowser: model.RememberBrowser);
+            var result = await SignInManager.TwoFactorSignInAsync(model.Provider, model.Code, isPersistent: model.RememberMe, rememberBrowser: model.RememberBrowser);
             switch (result)
             {
                 case SignInStatus.Success:
+
                     return RedirectToLocal(model.ReturnUrl);
                 case SignInStatus.LockedOut:
                     return View("Lockout");
@@ -156,8 +176,23 @@ namespace CRMCarDealer.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
-                    await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
-                    
+                    await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+                    await UserManager.AddToRolesAsync(user.Id, "customer");
+                    CRMContext context = new CRMContext();
+                    Contact contact = new Contact() { Mail = model.Email, Telephone = model.Telephone };
+
+
+                    Prospect prospect = new Prospect() { Name = model.Name + " " + model.Surname, ContactId = contact.ContactId };
+                    User userCRM = new User() { UserName = model.Email, PassWord = model.Password, ContactId = contact.ContactId };
+                    Customer _customer = new Customer() { ProspectId = prospect.ProspectId };
+
+                    //userCRM.Salesman = new Salesman() { Name = model.Name, Surname = model.Surname };
+                    context.Contacts.Add(contact);
+                    context.Prospects.Add(prospect);
+                    context.Users.Add(userCRM);
+                    context.Customers.Add(_customer);
+                    context.SaveChanges();
+
                     // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
                     // Send an email with this link
                     // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
