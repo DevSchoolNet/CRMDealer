@@ -10,7 +10,7 @@ namespace CRMModels
     public class CRMContext : DbContext
     {
 
-        public CRMContext() : base("DefaultConnection") { }
+        public CRMContext() : base("ExternalConnection") { }
 
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<Prospect> Prospects { get; set; }
